@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+    <title>1</title>
+    </head>
+    <body>
+        <div>
+            <script type="text/javascript">
+            
+                function makeCounter() 
+                    {
+                        var count=1;
+                        function counter()
+                            {
+                                return count++;  
+                            }
+                        counter.get=function()
+                            {
+                                return count;
+                            };
+                        counter.set= function(a)
+                            {
+                                count=a;
+                            };
+                        counter.reset=function()
+                            {
+                                count=1;
+                            };
+                        return counter;                            
+                    }
+
+                var counter1 = makeCounter();
+                counter1();
+                console.log(counter1.get()); // 2
+                counter1.set(10);
+                counter1();
+                console.log(counter1.get()); // 11
+                console.log(counter1()); // 11
+                counter1.reset();
+                console.log(counter1.get()); // 1
+                
+            </script>
+        </div>
+    </body>
+</html>
